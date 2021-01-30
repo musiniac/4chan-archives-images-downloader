@@ -57,21 +57,21 @@ def download_images(url, category):
     threadNumber = matches[0]
 
     # Create folder to download images
-    exist = os.path.exists(defaultPath + "/Images/")
+    exist = os.path.exists(defaultPath + "/content/drive/archived.moe")
     if exist is False:
-        os.mkdir(defaultPath + "/Images/")
+        os.mkdir(defaultPath + "/content/drive/archived.moe")
 
     # Create sub folder
-    exist = os.path.exists(defaultPath + "/Images/" + category)
+    exist = os.path.exists(defaultPath + "/content/drive/archived.moe" + category)
     if exist is False:
-        os.mkdir(defaultPath + "/Images/" + category)
+        os.mkdir(defaultPath + "/content/drive/archived.moe" + category)
 
     # Create sub folder of the thread
-    exist = os.path.exists(defaultPath + "/Images/" + category + "/" + threadNumber)
+    exist = os.path.exists(defaultPath + "/content/drive/archived.moe" + category + "/" + threadNumber)
     if exist is False:
-        os.mkdir(defaultPath + "/Images/" + category + "/" + threadNumber)
+        os.mkdir(defaultPath + "/content/drive/archived.moe" + category + "/" + threadNumber)
 
-    pathToSave = defaultPath + "/Images/" + category + "/" + threadNumber
+    pathToSave = defaultPath + "/content/drive/archived.moe" + category + "/" + threadNumber
 
     for image in images:
         regex = r"thumb(.*)"
@@ -116,4 +116,5 @@ except IndexError as ie:
     print("python3 main.py <URL> <Category>")
     print("or")
     print("python3 main.py <CSV File>")
+
 
